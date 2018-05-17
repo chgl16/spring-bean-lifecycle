@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" scope="singleton" init-method="init" destroy-method="myDestroy" class="top.chgl16.myspring.beanlife.Person">
+        <property name="name" value="chgl16" ></property>        <!-- spring中的类都叫bean，property是给类成员初始化 -->
+    </bean>
+    <bean id="employee" class="top.chgl16.myspring.beanlife.Employee">
+        <property name="name" value="小明员工" ></property>        <!-- spring中的类都叫bean，property是给类成员初始化 -->
+    </bean>
+    <bean id="myBeanPostProcessor"  scope="prototype" class="top.chgl16.myspring.beanlife.MyBeanPostProcessor" >  <!-- 即便使用prototype属性范围，其还是被调用了 -->
+    </bean>
+    <bean id="myBeanNameAware" class="top.chgl16.myspring.beanlife.MyBeanNameAware" >
+    </bean>
+</beans>
